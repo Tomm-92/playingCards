@@ -27,3 +27,9 @@ func (d deck) print() {
 		fmt.Println(i,card)
 	}
 }
+
+// go has support for returning multiple values from a function
+
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+ }
