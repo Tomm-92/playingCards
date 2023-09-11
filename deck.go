@@ -62,12 +62,12 @@ func (d deck) shuffle() {
 	source := rand.NewSource(time.Now().UnixNano())
 	r := rand.New(source)
 
-	//time is being used to generate a different int64 number everytime programme starts
-	//this is the seed to create a new source object which is basis for random number generator 
-
 	for i := range d {
 		newPosition := r.Intn(len(d) - 1)
 
 		d[i], d[newPosition] = d[newPosition], d[i]
 	}
 }
+
+	//time is being used to generate a different int64 number everytime programme starts
+	//this is the seed to create a new source object which is basis for random number generator 
